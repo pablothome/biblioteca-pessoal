@@ -239,3 +239,31 @@ function exibirPorDecada(): void {
 
 exibirPorDecada()
 
+console.log('\n==============================');
+console.log('📚 DEMONSTRAÇÃO COMPLETA');
+console.log('==============================');
+
+exibirBiblioteca();
+
+console.log('\n--- TESTES ---');
+adicionarLivro('Harry Potter', 'J.K. Rowling', 1997, 300);
+removerLivro(1);
+marcarComoLido(2, 4);
+
+console.log('\n--- BUSCAS ---');
+console.log(buscarPorTitulo('code'));
+console.log(listarPorAutor('Robert C. Martin'));
+
+console.log('\n--- STATUS ---');
+console.log('Lidos:', listarLidos());
+console.log('Pendentes:', listarPendentes());
+
+console.log('\n--- ESTATÍSTICAS ---');
+console.log(`Total: ${totalLivros()}`);
+console.log(`Lidos: ${totalLidos()} (${percentualLidos().toFixed(2)}%)`);
+console.log(`Média: ${mediaAvaliacoes().toFixed(2)}`);
+console.log(`Melhor: ${livroMaiorAvaliacao()}`);
+console.log(`Páginas: ${totalPaginasLidas()}`);
+
+exibirPorDecada();
+
