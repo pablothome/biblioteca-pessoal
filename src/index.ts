@@ -121,28 +121,28 @@ encontrados.forEach(i => {
 
 // listar por autor
 console.log('\nLivros de Robert C. Martin:');
-const livrosAutor = listarPorAutor('Fernando Pessoa');
+const livrosAutor = listarPorAutor('Robert C. Martin');
 
 livrosAutor.forEach(titulo => {
   console.log(`- ${titulo}`);
 });
 
-function marcarComoLido(indice: number, avaliaco: number): void {
+function marcarComoLido(indice: number, avaliacao: number): void {
 
   if (indice < 0 || indice >= titulos.length) {
     console.log(`Indice inválido!`)
     return;
   }
 
-  if (avaliaco < 1 || avaliaco > 5) {
+  if (avaliacao < 1 || avaliacao > 5) {
     console.log(`Avaliação deve ser entre 1 e 5`)
     return
   }
 
   lido[indice] = true
-  avaliacoes[indice] = avaliaco
+  avaliacoes[indice] = avaliacao
 
-  console.log(`Livro "${titulos[indice]}" marcado como lido (${avaliaco}/5)`)
+  console.log(`Livro "${titulos[indice]}" marcado como lido (${avaliacao}/5)`)
 }
 
 function listarLidos(): string[] {
@@ -175,7 +175,7 @@ function totalLidos(): number {
 }
 
 function percentualLidos(): number {
-  return (totalLidos() / totalLivros()) * 100
+  return totalLivros() ? (totalLidos() / totalLivros()) * 100 : 0
 }
 
 function mediaAvaliacoes(): number {
@@ -219,6 +219,7 @@ console.log(`Total de páginas lidas: ${totalPaginasLidas()}`);
 
 function exibirPorDecada(): void {
   console.log('\n=== POR DÉCADA ===');
+
 
   const decadas: { [key: string]: string[] } = {};
 
