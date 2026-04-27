@@ -89,3 +89,40 @@ adicionarLivro('Código Limpo 2', 'Robert C. Martin', 2020, 500);
 removerLivro(2);
 
 exibirBiblioteca();
+
+function buscarPorTitulo(termo: string): number[] {
+  const resultados: number[] = [];
+
+  titulos.forEach((titulo, i) => {
+    if (titulo.toLowerCase().includes(termo.toLowerCase())) {
+      resultados.push(i);
+    }
+  });
+
+  return resultados;
+}
+
+function listarPorAutor(autor: string): string[] {
+  return titulos
+    .map((titulo, i) => ({titulo, autor: autores[i] }))
+    .filter(livro => livro.autor === autor)
+    .map(livro => livro.titulo)
+}
+
+console.log('\n=== TESTE BUSCAS ===');
+
+// buscar por título
+const encontrados = buscarPorTitulo('code');
+
+console.log('Busca por "code":');
+encontrados.forEach(i => {
+  console.log(`- ${titulos[i]}`);
+});
+
+// listar por autor
+console.log('\nLivros de Robert C. Martin:');
+const livrosAutor = listarPorAutor('Fernando Pessoa');
+
+livrosAutor.forEach(titulo => {
+  console.log(`- ${titulo}`);
+});
