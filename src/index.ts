@@ -126,3 +126,42 @@ const livrosAutor = listarPorAutor('Fernando Pessoa');
 livrosAutor.forEach(titulo => {
   console.log(`- ${titulo}`);
 });
+
+function marcarComoLido(indice: number, avaliaco: number): void {
+
+  if (indice < 0 || indice >= titulos.length) {
+    console.log(`Indice inválido!`)
+    return;
+  }
+
+  if (avaliaco < 1 || avaliaco > 5) {
+    console.log(`Avaliação deve ser entre 1 e 5`)
+    return
+  }
+
+  lido[indice] = true
+  avaliacoes[indice] = avaliaco
+
+    console.log(`Livro "${titulos[indice]}" marcado como lido (${avaliaco}/5)`)
+}
+
+function listarLidos(): string[] {
+  return titulos.filter((_, i) => lido[i])
+}
+
+function listarPendentes(): string[] {
+  return titulos.filter((_, i) => !lido[i])
+}
+
+console.log('\n=== TESTE STATUS DE LEITURA ===');
+
+// marcar livro como lido
+marcarComoLido(2, 4); // escolhe um índice válido
+
+// listar lidos
+console.log('\nLivros lidos:');
+listarLidos().forEach(t => console.log(`- ${t}`));
+
+// listar pendentes
+console.log('\nLivros pendentes:');
+listarPendentes().forEach(t => console.log(`- ${t}`));
