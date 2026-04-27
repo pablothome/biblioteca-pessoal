@@ -16,7 +16,7 @@ autores.push(
 );
 
 anos.push(1934, 2008, 1949, 1866, 1472);
-paginas.push(528, 464, 328,  592, 696);
+paginas.push(528, 464, 328, 592, 696);
 lido.push(true, true, false, true, false);
 avaliacoes.push(5, 4, 0, 5, 0);
 
@@ -104,7 +104,7 @@ function buscarPorTitulo(termo: string): number[] {
 
 function listarPorAutor(autor: string): string[] {
   return titulos
-    .map((titulo, i) => ({titulo, autor: autores[i] }))
+    .map((titulo, i) => ({ titulo, autor: autores[i] }))
     .filter(livro => livro.autor === autor)
     .map(livro => livro.titulo)
 }
@@ -142,7 +142,7 @@ function marcarComoLido(indice: number, avaliaco: number): void {
   lido[indice] = true
   avaliacoes[indice] = avaliaco
 
-    console.log(`Livro "${titulos[indice]}" marcado como lido (${avaliaco}/5)`)
+  console.log(`Livro "${titulos[indice]}" marcado como lido (${avaliaco}/5)`)
 }
 
 function listarLidos(): string[] {
@@ -216,4 +216,26 @@ console.log(`Livros lidos: ${totalLidos()} (${percentualLidos().toFixed(2)}%)`);
 console.log(`Média das avaliações: ${mediaAvaliacoes().toFixed(2)}`);
 console.log(`Livro melhor avaliado: ${livroMaiorAvaliacao()}`);
 console.log(`Total de páginas lidas: ${totalPaginasLidas()}`);
+
+function exibirPorDecada(): void {
+  console.log('\n=== POR DÉCADA ===');
+
+  const decadas: { [key: string]: string[] } = {};
+
+  titulos.forEach((titulo, i) => {
+    const decada = Math.floor(anos[i]! / 10) * 10 + 's';
+
+    if (!decadas[decada]) {
+      decadas[decada] = [];
+    }
+
+    decadas[decada].push(titulo);
+  });
+
+  for (const decada in decadas) {
+    console.log(`${decada}: ${decadas[decada]!.join(', ')}`);
+  }
+}
+
+exibirPorDecada()
 
