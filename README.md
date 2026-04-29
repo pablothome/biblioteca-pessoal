@@ -48,28 +48,28 @@ biblioteca-pessoal/
 
 ### 1. Clonar o repositório
 
-```id="0az1p8"
+
 git clone <link-do-repositorio>
 cd biblioteca-pessoal
-```
+
 
 ### 2. Instalar dependências
 
-```id="g0djjh"
+
 npm install
-```
+
 
 ### 3. Compilar o projeto
 
-```id="cz9d7u"
+
 npm run build
-```
+
 
 ### 4. Executar a aplicação
 
-```id="0d6v7m"
+
 npm run dev
-```
+
 
 ---
 
@@ -124,27 +124,26 @@ Listar livros por autor
 
 ##  Exemplo de saída
 
-```id="s8e7v2"
 === MINHA BIBLIOTECA ===
-1. "O Hobbit" (1937) - J.R.R. Tolkien - 310 pag - LIDO (5/5)
+1. "O Livro do Desassossego" (1982) - Fernando Pessoa - 528 pag - LIDO (5/5)
 2. "Clean Code" (2008) - Robert C. Martin - 464 pag - LIDO (4/5)
 3. "1984" (1949) - George Orwell - 328 pag - PENDENTE
-4. "Dom Casmurro" (1899) - Machado de Assis - 256 pag - LIDO (5/5)
-5. "O Nome do Vento" (2007) - Patrick Rothfuss - 662 pag - PENDENTE
+4. "Crime e Castigo" (1866) - Fiódor Dostoiévski - 590 pag - LIDO (5/5)
+5. "A Divina Comédia" (1321) - Dante Alighieri - 700 pag - PENDENTE
 
 === ESTATISTICAS ===
 Total de livros: 5
 Livros lidos: 3 (60.00%)
 Media das avaliacoes: 4.67
-Livro melhor avaliado: O Hobbit
-Total de paginas lidas: 1030
+Livro melhor avaliado: O Livro do Desassossego
+Total de paginas lidas: 1582
 
 === POR DECADA ===
-1890s: Dom Casmurro
-1930s: O Hobbit
+1320s: A Divina Comédia
+1860s: Crime e Castigo
 1940s: 1984
-2000s: Clean Code, O Nome do Vento
-```
+1980s: O Livro do Desassossego
+2000s: Clean Code
 
 ---
 
