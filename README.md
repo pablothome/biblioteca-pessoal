@@ -14,23 +14,24 @@ A aplicação utiliza **arrays paralelos** para armazenar os dados dos livros, o
 
 O objetivo do projeto é aplicar conceitos fundamentais de programação, incluindo:
 
- Tipagem estática com TypeScript (`strict`)
-Manipulação de arrays
- Métodos funcionais (`map`, `filter`, `reduce`, `forEach`)
- Organização e reutilização de código
- Controle de fluxo e validações
+- Tipagem estática com TypeScript (`strict`)
+- Manipulação de arrays
+- Métodos funcionais (`map`, `filter`, `reduce`, `forEach`)
+- Organização e reutilização de código
+- Controle de fluxo e validações
 
 ---
 
 ##  Tecnologias utilizadas
 
- NTypeScript 5+
+ - Node.js 18+
+- TypeScript 5+
 
 ---
 
 ##  Estrutura do projeto
 
-```id="k9b3n7"
+
 biblioteca-pessoal/
 ├── src/
 │   └── index.ts
@@ -41,9 +42,9 @@ biblioteca-pessoal/
 └── README.md
 ```
 
----
 
-##  Como executar o projeto
+
+###  Como executar o projeto
 
 ### 1. Clonar o repositório
 
