@@ -1,7 +1,3 @@
-// ==============================
-// 📚 DADOS
-// ==============================
-
 const titulos: string[] = [];
 const autores: string[] = [];
 const anos: number[] = [];
@@ -9,9 +5,7 @@ const paginas: number[] = [];
 const lido: boolean[] = [];
 const avaliacoes: number[] = [];
 
-// ==============================
-// 📥 DADOS INICIAIS
-// ==============================
+
 
 titulos.push('O Livro do Desassossego', 'Clean Code', '1984', 'Crime e Castigo', 'A Divina Comédia');
 
@@ -28,9 +22,7 @@ paginas.push(528, 464, 328, 590, 700);
 lido.push(true, true, false, true, false);
 avaliacoes.push(5, 4, 0, 5, 0);
 
-// ==============================
-// 📖 EXIBIÇÃO
-// ==============================
+
 
 function exibirBiblioteca(): void {
   console.log('\n=== MINHA BIBLIOTECA ===');
@@ -60,9 +52,9 @@ function exibirBiblioteca(): void {
   });
 }
 
-// ==============================
-// ➕ CADASTRO / REMOÇÃO
-// ==============================
+
+//CADASTRO / REMOÇÃO
+
 
 function adicionarLivro(
   titulo: string,
@@ -97,9 +89,9 @@ function removerLivro(indice: number): void {
   avaliacoes.splice(indice, 1);
 }
 
-// ==============================
-// 🔍 BUSCAS
-// ==============================
+
+// BUSCAS
+
 
 function buscarPorTitulo(termo: string): number[] {
   const resultados: number[] = [];
@@ -120,9 +112,9 @@ function listarPorAutor(autor: string): string[] {
     .map(livro => livro.titulo);
 }
 
-// ==============================
-// 📘 STATUS DE LEITURA
-// ==============================
+
+//STATUS DE LEITURA
+
 
 function marcarComoLido(indice: number, avaliacao: number): void {
   if (indice < 0 || indice >= titulos.length) return;
@@ -141,9 +133,9 @@ function listarPendentes(): string[] {
   return titulos.filter((_, i) => lido[i] === false);
 }
 
-// ==============================
-// 📊 ESTATÍSTICAS
-// ==============================
+
+//ESTATÍSTICAS
+
 
 function totalLivros(): number {
   return titulos.length;
@@ -188,9 +180,9 @@ function totalPaginasLidas(): number {
     .reduce((acc, p) => acc + p, 0);
 }
 
-// ==============================
-// 📆 DÉCADAS
-// ==============================
+
+//DÉCADAS
+
 
 function exibirPorDecada(): void {
   console.log('\n=== POR DECADA ===');
@@ -217,9 +209,8 @@ function exibirPorDecada(): void {
     });
 }
 
-// ==============================
-// 🚀 DEMONSTRAÇÃO FINAL
-// ==============================
+
+//DEMONSTRAÇÃO FINAL
 
 exibirBiblioteca();
 
@@ -232,9 +223,8 @@ console.log(`Total de paginas lidas: ${totalPaginasLidas()}`);
 
 exibirPorDecada();
 
-// ==============================
-// 🧪 TESTES (todas funcionalidades)
-// ==============================
+// TESTES (todas funcionalidades)
+
 
 console.log('\n=== TESTES ===');
 
